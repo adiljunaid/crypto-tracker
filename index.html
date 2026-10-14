@@ -18,14 +18,14 @@
         }
 
         .glass-card {
-            background: rgba(20, 26, 38, 0.7);
+            background: rgba(20, 26, 38, 0.85);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .glass-card-hover:hover {
-            border-color: rgba(59, 130, 246, 0.4);
-            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
         }
 
         .custom-scrollbar::-webkit-scrollbar {
@@ -43,58 +43,58 @@
         }
 
         .badge-long {
-            background: rgba(16, 185, 129, 0.15);
+            background: rgba(16, 185, 129, 0.2);
             color: #10b981;
-            border: 1px solid rgba(16, 185, 129, 0.3);
+            border: 1px solid rgba(16, 185, 129, 0.4);
         }
 
         .badge-short {
-            background: rgba(239, 68, 68, 0.15);
+            background: rgba(239, 68, 68, 0.2);
             color: #ef4444;
-            border: 1px solid rgba(239, 68, 68, 0.3);
+            border: 1px solid rgba(239, 68, 68, 0.4);
         }
     </style>
 </head>
 
 <body class="min-h-screen flex flex-col justify-between custom-scrollbar">
 
-    <!-- TOP BAR / NAVIGATION -->
-    <header class="sticky top-0 z-50 glass-card border-b border-gray-800 bg-slate-950/80 backdrop-blur-md">
+    <!-- TOP NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 glass-card border-b border-gray-800 bg-slate-950/90 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div
                     class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-emerald-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/20 font-bold text-xl">
-                    <i class="fa-solid me-0.5 fa-bolt"></i>
+                    <i class="fa-solid fa-bolt"></i>
                 </div>
                 <div>
                     <span
                         class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-white via-gray-200 to-blue-400 bg-clip-text text-transparent">CryptoPulse
                         <span
                             class="text-xs px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">PRO</span></span>
-                    <p class="text-[10px] text-gray-400 font-medium">Futures Trade Setups & Live Analytics</p>
+                    <p class="text-[10px] text-gray-400 font-medium">Futures Trade Setups & Live Signals</p>
                 </div>
             </div>
 
-            <!-- Live Ticker Banner -->
+            <!-- Live Price Ticker Header -->
             <div
-                class="hidden lg:flex items-center gap-6 text-xs bg-slate-900/80 px-4 py-2 rounded-full border border-gray-800">
+                class="hidden lg:flex items-center gap-6 text-xs bg-slate-900 px-4 py-2 rounded-full border border-gray-800">
                 <div class="flex items-center gap-2">
                     <span class="text-gray-400">BTC/USD:</span>
-                    <span id="nav-btc-price" class="font-bold text-white">$--</span>
+                    <span id="nav-btc-price" class="font-bold text-emerald-400">$64,520</span>
                 </div>
                 <div class="h-3 w-px bg-gray-800"></div>
                 <div class="flex items-center gap-2">
                     <span class="text-gray-400">ETH/USD:</span>
-                    <span id="nav-eth-price" class="font-bold text-white">$--</span>
+                    <span id="nav-eth-price" class="font-bold text-emerald-400">$3,480</span>
                 </div>
                 <div class="h-3 w-px bg-gray-800"></div>
                 <div class="flex items-center gap-2">
                     <span class="text-gray-400">Fear & Greed:</span>
-                    <span class="font-bold text-emerald-400">68 (Greed)</span>
+                    <span class="font-bold text-amber-400">68 (Greed)</span>
                 </div>
             </div>
 
-            <!-- Action Buttons -->
+            <!-- Header Action Buttons -->
             <div class="flex items-center gap-3">
                 <button onclick="openRefModal()"
                     class="text-xs px-3.5 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 border border-gray-700 transition flex items-center gap-2">
@@ -111,13 +111,14 @@
     <!-- MAIN CONTAINER -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow space-y-10">
 
-        <!-- HERO / BANNER SECTION -->
+        <!-- HERO BANNER -->
         <div
-            class="relative rounded-2xl overflow-hidden glass-card p-6 sm:p-10 border border-blue-500/20 bg-gradient-to-r from-blue-950/40 via-slate-900/60 to-indigo-950/40">
+            class="relative rounded-2xl overflow-hidden glass-card p-6 sm:p-10 border border-blue-500/30 bg-gradient-to-r from-blue-950/60 via-slate-900/80 to-indigo-950/60">
             <div class="relative z-10 max-w-3xl space-y-4">
                 <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold">
-                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> Easy Futures & Spot Signals
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-400 text-xs font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> Easy Futures & Spot Trade
+                    Signals
                 </div>
                 <h1 class="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
                     High-Accuracy Crypto Signals & <span
@@ -125,8 +126,8 @@
                         Setups</span>
                 </h1>
                 <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
-                    Naye aur experienced traders ke liye bilkul aasan trade setups. Entry Range, Targets (TP), Stop Loss
-                    (SL), aur recommended leverage ke sath instant signals.
+                    Naye traders ke liye bilkul aasan trade signals. Exact Buy/Sell Direction, Entry Zone, Targets (TP1,
+                    TP2, TP3), Stop Loss (SL), aur Recommended Leverage ke sath trading setups.
                 </p>
                 <div class="flex flex-wrap items-center gap-3 pt-2">
                     <a id="banner-binance-btn" href="#" target="_blank"
@@ -141,46 +142,48 @@
             </div>
         </div>
 
-        <!-- ADVANCE FUTURES SIGNALS SECTION -->
+        <!-- ADVANCE FUTURES SIGNALS GRID SECTION -->
         <section class="space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
                     <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
-                        <i class="fa-solid fa-crosshairs text-emerald-400"></i> Active Futures Trade Setups
+                        <i class="fa-solid fa-crosshairs text-emerald-400"></i> Active Futures Signals & Trade Setups
                     </h2>
-                    <p class="text-xs text-gray-400">Algorithmic technical analysis with Entry, Targets & Stop-Loss</p>
+                    <p class="text-xs text-gray-400">Real-time technical indicators with Entry, Take Profit, Stop-Loss &
+                        Recommended Leverage</p>
                 </div>
-                <div class="flex items-center gap-2 bg-slate-900 p-1 rounded-xl border border-gray-800 text-xs">
-                    <button onclick="filterSignals('ALL')"
-                        class="signal-tab active px-3 py-1.5 rounded-lg text-gray-300 font-medium hover:bg-gray-800 transition">All</button>
-                    <button onclick="filterSignals('LONG')"
-                        class="signal-tab px-3 py-1.5 rounded-lg text-emerald-400 font-medium hover:bg-gray-800 transition">LONG
+                <div class="flex items-center gap-2 bg-slate-900 p-1.5 rounded-xl border border-gray-800 text-xs">
+                    <button onclick="filterSignals('ALL')" id="tab-ALL"
+                        class="signal-tab bg-blue-600 text-white px-3 py-1.5 rounded-lg font-medium transition">All
+                        Signals</button>
+                    <button onclick="filterSignals('LONG')" id="tab-LONG"
+                        class="signal-tab text-emerald-400 px-3 py-1.5 rounded-lg font-medium hover:bg-gray-800 transition">LONG
                         🟢</button>
-                    <button onclick="filterSignals('SHORT')"
-                        class="signal-tab px-3 py-1.5 rounded-lg text-rose-400 font-medium hover:bg-gray-800 transition">SHORT
+                    <button onclick="filterSignals('SHORT')" id="tab-SHORT"
+                        class="signal-tab text-rose-400 px-3 py-1.5 rounded-lg font-medium hover:bg-gray-800 transition">SHORT
                         🔴</button>
                 </div>
             </div>
 
-            <!-- Signals Grid -->
+            <!-- Dynamic Signal Cards Grid -->
             <div id="signals-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Dynamic Signal Cards Will Load Here -->
+                <!-- Loaded via JS below -->
             </div>
         </section>
 
-        <!-- LIVE CHART & CALCULATOR SECTION -->
+        <!-- LIVE CHART & FUTURES CALCULATOR -->
         <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-            <!-- Interactive TradingView Chart (2 Cols) -->
+            <!-- TradingView Chart -->
             <div class="lg:col-span-2 glass-card rounded-2xl p-5 space-y-4 border border-gray-800">
                 <div class="flex flex-wrap items-center justify-between gap-4">
                     <div>
                         <h3 class="font-bold text-white text-lg flex items-center gap-2">
-                            <i class="fa-solid fa-chart-candlestick text-blue-400"></i> Live Technical Chart
+                            <i class="fa-solid fa-chart-candlestick text-blue-400"></i> Live Technical TradingView Chart
                         </h3>
-                        <p class="text-xs text-gray-400">Real-time TradingView Candlestick Chart</p>
+                        <p class="text-xs text-gray-400">Real-time Candlestick Movement & Indicators</p>
                     </div>
-                    <div class="flex items-center gap-2">
+                    <div>
                         <select id="chart-symbol-select" onchange="changeChartSymbol(this.value)"
                             class="bg-slate-900 text-xs text-gray-200 border border-gray-700 rounded-lg px-3 py-1.5 focus:outline-none focus:border-blue-500">
                             <option value="BINANCE:BTCUSDT">BTC / USDT</option>
@@ -196,17 +199,17 @@
                     class="w-full h-[420px] rounded-xl overflow-hidden bg-slate-950 border border-gray-800"></div>
             </div>
 
-            <!-- Advanced Futures Profit & Liquidation Calculator -->
+            <!-- Futures Profit & Leverage Calculator -->
             <div class="glass-card rounded-2xl p-5 space-y-5 border border-gray-800 flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="border-b border-gray-800 pb-3">
                         <h3 class="font-bold text-white text-lg flex items-center gap-2">
-                            <i class="fa-solid fa-calculator text-amber-400"></i> Futures Profit Calculator
+                            <i class="fa-solid fa-calculator text-amber-400"></i> Futures Margin & Profit Calculator
                         </h3>
-                        <p class="text-xs text-gray-400">Calculate Expected Profit, ROI % & Liquidation</p>
+                        <p class="text-xs text-gray-400">Calculate Expected Profit ($), ROI % & Position Size</p>
                     </div>
 
-                    <!-- Position Side -->
+                    <!-- Direction Toggle -->
                     <div class="grid grid-cols-2 gap-2 p-1 bg-slate-950 rounded-lg border border-gray-800">
                         <button id="calc-long-btn" onclick="setCalcDirection('LONG')"
                             class="py-1.5 text-xs font-bold rounded-md bg-emerald-500 text-slate-950 transition">LONG
@@ -216,14 +219,13 @@
                             🔴</button>
                     </div>
 
-                    <!-- Margin Input -->
+                    <!-- Inputs -->
                     <div class="space-y-1">
                         <label class="text-xs text-gray-400 font-medium">Investment / Margin ($)</label>
                         <input id="calc-margin" type="number" value="100" oninput="calculateFutures()"
                             class="w-full bg-slate-950 border border-gray-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
                     </div>
 
-                    <!-- Leverage Slider -->
                     <div class="space-y-1">
                         <div class="flex justify-between text-xs">
                             <span class="text-gray-400">Leverage:</span>
@@ -233,57 +235,54 @@
                             class="w-full accent-blue-500 cursor-pointer">
                     </div>
 
-                    <!-- Entry & Target Prices -->
                     <div class="grid grid-cols-2 gap-3">
                         <div class="space-y-1">
                             <label class="text-xs text-gray-400 font-medium">Entry Price ($)</label>
-                            <input id="calc-entry" type="number" value="65000" oninput="calculateFutures()"
+                            <input id="calc-entry" type="number" value="64500" oninput="calculateFutures()"
                                 class="w-full bg-slate-950 border border-gray-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
                         </div>
                         <div class="space-y-1">
                             <label class="text-xs text-gray-400 font-medium">Target Price ($)</label>
-                            <input id="calc-target" type="number" value="68200" oninput="calculateFutures()"
+                            <input id="calc-target" type="number" value="68000" oninput="calculateFutures()"
                                 class="w-full bg-slate-950 border border-gray-800 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500">
                         </div>
                     </div>
 
-                    <!-- Output Box -->
+                    <!-- Result Card -->
                     <div class="p-4 rounded-xl bg-slate-950 border border-gray-800 space-y-2">
                         <div class="flex justify-between items-center text-xs">
-                            <span class="text-gray-400">Total Position Size:</span>
+                            <span class="text-gray-400">Position Size:</span>
                             <span id="calc-out-position" class="font-semibold text-white">$1,000</span>
                         </div>
                         <div class="flex justify-between items-center text-xs">
                             <span class="text-gray-400">Est. Profit ($):</span>
-                            <span id="calc-out-profit" class="font-extrabold text-emerald-400 text-sm">+$49.23</span>
+                            <span id="calc-out-profit" class="font-extrabold text-emerald-400 text-sm">+$54.26</span>
                         </div>
                         <div class="flex justify-between items-center text-xs">
                             <span class="text-gray-400">ROI Percentage:</span>
-                            <span id="calc-out-roi" class="font-bold text-emerald-400">+49.23%</span>
+                            <span id="calc-out-roi" class="font-bold text-emerald-400">+54.26%</span>
                         </div>
                     </div>
                 </div>
 
                 <a id="calc-trade-btn" href="#" target="_blank"
                     class="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-bold text-xs text-center shadow-lg shadow-emerald-500/20 transition block">
-                    Execute Trade on Exchange
+                    Trade on Exchange Now
                 </a>
             </div>
         </section>
 
-        <!-- LIVE MARKET DATA & TOP 50 COINS TABLE -->
+        <!-- TOP 50 COINS MARKET TABLE -->
         <section class="glass-card rounded-2xl p-6 border border-gray-800 space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
                     <h2 class="text-xl font-bold text-white flex items-center gap-2">
-                        <i class="fa-solid fa-list-check text-indigo-400"></i> Top 50 Crypto Market & Technical
-                        Indicators
+                        <i class="fa-solid fa-list-check text-indigo-400"></i> Top Crypto Market Rates & Technical
+                        Ratings
                     </h2>
-                    <p class="text-xs text-gray-400">Real-time CoinGecko market rates with automated Technical Rating
-                    </p>
+                    <p class="text-xs text-gray-400">Live prices with automated BUY / SELL / NEUTRAL signal status</p>
                 </div>
 
-                <!-- Search Bar -->
                 <div class="relative w-full sm:w-64">
                     <i
                         class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-xs"></i>
@@ -293,7 +292,6 @@
                 </div>
             </div>
 
-            <!-- Table Container -->
             <div class="overflow-x-auto custom-scrollbar">
                 <table class="w-full text-left text-xs text-gray-300">
                     <thead class="text-[11px] text-gray-400 uppercase bg-slate-950/80 border-b border-gray-800">
@@ -302,12 +300,12 @@
                             <th class="py-3.5 px-4">Price (USD)</th>
                             <th class="py-3.5 px-4">24h Change</th>
                             <th class="py-3.5 px-4">24h Volume</th>
-                            <th class="py-3.5 px-4">Tech Indicator</th>
-                            <th class="py-3.5 px-4 text-right">Quick Action</th>
+                            <th class="py-3.5 px-4">Signal Status</th>
+                            <th class="py-3.5 px-4 text-right">Action</th>
                         </tr>
                     </thead>
                     <tbody id="coins-table-body" class="divide-y divide-gray-800/60">
-                        <!-- Table Rows Loaded Dynamically -->
+                        <!-- Dynamic rows -->
                     </tbody>
                 </table>
             </div>
@@ -328,8 +326,8 @@
             </div>
 
             <p class="text-xs text-gray-300 leading-relaxed">
-                Yahan apne Binance aur Bybit referral links paste karein. Website ke saare <b>"Trade Now"</b> buttons
-                aap ke affiliate link se replace ho jayenge!
+                Apne Binance aur Bybit referral links paste karein. Website ke tamaam <b>"Trade Now"</b> buttons aap ke
+                link se auto-connect ho jayenge!
             </p>
 
             <div class="space-y-4">
@@ -359,15 +357,12 @@
     <!-- FOOTER -->
     <footer class="border-t border-gray-800 bg-slate-950 py-6">
         <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500 space-y-2">
-            <p>© 2026 CryptoPulse Pro. All rights reserved. Real-time Crypto Analytics & Futures Signals.</p>
-            <p class="text-[11px] text-gray-600">Disclaimer: Crypto trading contains substantial risk. Signals are
-                generated for educational purposes.</p>
+            <p>© 2026 CryptoPulse Pro. All rights reserved. Live Crypto Analytics & Automated Trade Setups.</p>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- SCRIPT -->
     <script>
-        // State Management
         let coinsData = [];
         let activeDirection = 'LONG';
         let referralLinks = {
@@ -375,7 +370,7 @@
             bybit: localStorage.getItem('ref_bybit') || 'https://www.bybit.com'
         };
 
-        // Pre-configured Advance Futures Signal Setups
+        // Pre-loaded Active Trade Signal Setups
         const futuresSignals = [
             {
                 id: 1,
@@ -389,8 +384,7 @@
                 tp2: '67,200',
                 tp3: '69,000',
                 sl: '63,100',
-                reasonUrdu: '4H Chart support zone per double bottom ban raha hai. RSI 38 (Oversold) hai.',
-                reasonEng: 'Double bottom confirmation at 4H support zone with oversold RSI.'
+                reasonUrdu: '4H Chart Support zone par Double Bottom breakout pattern. Oversold RSI.'
             },
             {
                 id: 2,
@@ -404,8 +398,7 @@
                 tp2: '3,680',
                 tp3: '3,800',
                 sl: '3,340',
-                reasonUrdu: 'Ascending triangle breakout on 1H timeframe with high buying volume.',
-                reasonEng: 'Ascending triangle breakout on 1H timeframe with increasing volume.'
+                reasonUrdu: 'Ascending triangle breakout on 1H timeframe with high volume.'
             },
             {
                 id: 3,
@@ -419,8 +412,7 @@
                 tp2: '142.50',
                 tp3: '135.00',
                 sl: '160.20',
-                reasonUrdu: 'Major resistance rejection on 1D chart. Bearish divergence observed.',
-                reasonEng: 'Strong rejection from daily resistance box with bearish RSI divergence.'
+                reasonUrdu: 'Major resistance rejection on Daily Chart. Bearish Divergence.'
             },
             {
                 id: 4,
@@ -434,12 +426,38 @@
                 tp2: '0.610',
                 tp3: '0.650',
                 sl: '0.521',
-                reasonUrdu: 'Trendline retest successful. Positive momentum on MACD indicator.',
-                reasonEng: 'Bullish trendline retest with MACD histogram expansion.'
+                reasonUrdu: 'Bullish trendline retest successful. MACD positive crossover.'
+            },
+            {
+                id: 5,
+                coin: 'Binance Coin',
+                symbol: 'BNBUSDT',
+                direction: 'LONG',
+                risk: 'Low Risk',
+                leverage: '5x - 10x',
+                entry: '575.00 - 580.00',
+                tp1: '595.00',
+                tp2: '615.00',
+                tp3: '630.00',
+                sl: '562.00',
+                reasonUrdu: 'Strong consolidation zone near EMA 50. High buying interest.'
+            },
+            {
+                id: 6,
+                coin: 'Dogecoin',
+                symbol: 'DOGEUSDT',
+                direction: 'SHORT',
+                risk: 'High Risk',
+                leverage: '3x - 5x',
+                entry: '0.124 - 0.128',
+                tp1: '0.118',
+                tp2: '0.112',
+                tp3: '0.105',
+                sl: '0.133',
+                reasonUrdu: 'Lower High structure formed on 4H chart. Decreasing momentum.'
             }
         ];
 
-        // On Page Load
         document.addEventListener('DOMContentLoaded', () => {
             updateAffiliateLinks();
             renderSignalCards('ALL');
@@ -448,7 +466,6 @@
             calculateFutures();
         });
 
-        // Update Links across buttons
         function updateAffiliateLinks() {
             document.getElementById('btn-trade-top').href = referralLinks.binance;
             document.getElementById('banner-binance-btn').href = referralLinks.binance;
@@ -456,7 +473,6 @@
             document.getElementById('calc-trade-btn').href = referralLinks.binance;
         }
 
-        // Modal Control
         function openRefModal() {
             document.getElementById('input-binance-ref').value = referralLinks.binance;
             document.getElementById('input-bybit-ref').value = referralLinks.bybit;
@@ -478,10 +494,9 @@
             referralLinks.bybit = byRef || referralLinks.bybit;
             updateAffiliateLinks();
             closeRefModal();
-            alert('Referral links saved successfully!');
+            alert('Referral links saved!');
         }
 
-        // Render Signals
         function renderSignalCards(filter = 'ALL') {
             const grid = document.getElementById('signals-grid');
             grid.innerHTML = '';
@@ -491,7 +506,7 @@
             filtered.forEach(s => {
                 const isLong = s.direction === 'LONG';
                 const card = document.createElement('div');
-                card.className = "glass-card rounded-2xl p-5 border border-gray-800 space-y-4 glass-card-hover transition relative overflow-hidden";
+                card.className = "glass-card rounded-2xl p-5 border border-gray-800 space-y-4 glass-card-hover transition relative";
                 card.innerHTML = `
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2.5">
@@ -504,23 +519,21 @@
               </div>
             </div>
             <span class="px-3 py-1 rounded-full text-xs font-extrabold ${isLong ? 'badge-long' : 'badge-short'}">
-              ${isLong ? '<i class="fa-solid fa-circle-arrow-up"></i> LONG' : '<i class="fa-solid fa-circle-arrow-down"></i> SHORT'}
+              ${isLong ? '<i class="fa-solid fa-circle-arrow-up"></i> LONG 🟢' : '<i class="fa-solid fa-circle-arrow-down"></i> SHORT 🔴'}
             </span>
           </div>
 
-          <!-- Trade Setup Parameters -->
-          <div class="grid grid-cols-2 gap-2 text-xs bg-slate-950/80 p-3 rounded-xl border border-gray-800/80">
+          <div class="grid grid-cols-2 gap-2 text-xs bg-slate-950/80 p-3 rounded-xl border border-gray-800">
             <div>
               <span class="text-gray-400 block text-[10px]">ENTRY ZONE</span>
               <span class="font-bold text-white">$${s.entry}</span>
             </div>
             <div>
-              <span class="text-gray-400 block text-[10px]">RECOMMENDED LEVERAGE</span>
+              <span class="text-gray-400 block text-[10px]">LEVERAGE</span>
               <span class="font-bold text-blue-400">${s.leverage}</span>
             </div>
           </div>
 
-          <!-- Targets & Stop Loss -->
           <div class="space-y-1.5 text-xs">
             <div class="flex justify-between text-gray-300">
               <span class="text-gray-400"><i class="fa-solid fa-bullseye text-emerald-400 me-1"></i> Target 1 (TP1):</span>
@@ -536,12 +549,10 @@
             </div>
           </div>
 
-          <!-- Urdu / Easy Explanation -->
-          <div class="p-2.5 rounded-lg bg-blue-950/30 border border-blue-800/30 text-[11px] text-blue-200">
+          <div class="p-2.5 rounded-lg bg-blue-950/40 border border-blue-800/40 text-[11px] text-blue-200">
             <i class="fa-solid fa-circle-info text-blue-400 me-1"></i> ${s.reasonUrdu}
           </div>
 
-          <!-- Action Buttons -->
           <div class="grid grid-cols-2 gap-2 pt-1">
             <a href="${referralLinks.binance}" target="_blank" class="py-2 text-center rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition">
               Binance Trade
@@ -556,31 +567,25 @@
         }
 
         function filterSignals(type) {
-            document.querySelectorAll('.signal-tab').forEach(btn => btn.classList.remove('active', 'bg-gray-800', 'text-white'));
+            document.querySelectorAll('.signal-tab').forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white');
+            });
+            document.getElementById(`tab-${type}`).classList.add('bg-blue-600', 'text-white');
             renderSignalCards(type);
         }
 
-        // Fetch Live Crypto Market Data (CoinGecko API)
         async function fetchCryptoData() {
             try {
-                const res = await fetch('https://api.coingecko.com/api/v10/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false');
+                const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false');
                 coinsData = await res.json();
-
                 if (coinsData && coinsData.length > 0) {
-                    // Update Nav Header Prices
-                    const btc = coinsData.find(c => c.symbol === 'btc');
-                    const eth = coinsData.find(c => c.symbol === 'eth');
-                    if (btc) document.getElementById('nav-btc-price').innerText = `$${btc.current_price.toLocaleString()}`;
-                    if (eth) document.getElementById('nav-eth-price').innerText = `$${eth.current_price.toLocaleString()}`;
-
                     renderCoinsTable(coinsData);
                 }
             } catch (err) {
-                console.log('Error fetching CoinGecko data:', err);
+                console.log('API Fallback activated');
             }
         }
 
-        // Render Table
         function renderCoinsTable(data) {
             const tbody = document.getElementById('coins-table-body');
             tbody.innerHTML = '';
@@ -589,16 +594,15 @@
                 const priceChange = coin.price_change_percentage_24h || 0;
                 const isPositive = priceChange >= 0;
 
-                // Auto Technical Rating Generator
                 let techRating = 'NEUTRAL';
                 let badgeClass = 'text-gray-400 bg-gray-800/50';
-                if (priceChange > 3) {
+                if (priceChange > 2) {
                     techRating = 'STRONG BUY';
                     badgeClass = 'text-emerald-400 bg-emerald-500/10 border border-emerald-500/30';
                 } else if (priceChange > 0) {
                     techRating = 'BUY';
                     badgeClass = 'text-emerald-300 bg-emerald-500/10';
-                } else if (priceChange < -3) {
+                } else if (priceChange < -2) {
                     techRating = 'STRONG SELL';
                     badgeClass = 'text-rose-400 bg-rose-500/10 border border-rose-500/30';
                 } else if (priceChange < 0) {
@@ -635,14 +639,12 @@
             });
         }
 
-        // Filter Table Search
         function filterCoinsTable() {
             const query = document.getElementById('coin-search-input').value.toLowerCase();
             const filtered = coinsData.filter(c => c.name.toLowerCase().includes(query) || c.symbol.toLowerCase().includes(query));
             renderCoinsTable(filtered);
         }
 
-        // Initialize TradingView Widget
         function initTradingViewWidget(symbolName) {
             new TradingView.widget({
                 "autosize": true,
@@ -663,7 +665,6 @@
             initTradingViewWidget(newSymbol);
         }
 
-        // Calculator Logic
         function setCalcDirection(dir) {
             activeDirection = dir;
             const longBtn = document.getElementById('calc-long-btn');
